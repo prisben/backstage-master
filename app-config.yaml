@@ -1,5 +1,5 @@
 app:
-  title: Backstage Example App
+  title: Demo App
   baseUrl: http://localhost:3000
   packages: all # ✨
 
@@ -25,7 +25,7 @@ app:
           - url: https://discord.gg/backstage-687207715902193673
             title: '#backstage'
 
-  packageName: example-app
+  packageName: demo-app
 
 backend:
   # Used for enabling authentication, secret is shared by all backend plugins
@@ -95,7 +95,7 @@ techdocs:
 integrations:
   github:
     - host: github.com
-      token: ${GITHUB_TOKEN}
+      token: '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'
   ### Example for how to add your GitHub Enterprise instance using the API:
   # - host: ghe.example.net
   #   apiBaseUrl: https://ghe.example.net/api/v3

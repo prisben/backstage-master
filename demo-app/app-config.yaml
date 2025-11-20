@@ -45,7 +45,7 @@ integrations:
   azure:
     - host: dev.azure.com
       credentials:
-        - personalAccessToken: '5QOu5ESGrXD8GvLxnQnvfJOsCdrYvNOg6Tf1vRo48Hztvrlw0BIbJQQJ99BKACAAAAAAAAAAAAASAZDO2tev'
+        - personalAccessToken: '2IKlvs87WBfusy60IfO5QU0DlKqXBPs71axG63fxHfE4YnAOTEpAJQQJ99BKACAAAAAAAAAAAAASAZDO37Wp'
 
 proxy:
   ### Example for how to add a proxy endpoint for the frontend.
@@ -98,6 +98,20 @@ catalog:
       target: ../../examples/org.yaml
       rules:
         - allow: [User, Group]
+  providers:
+      azureDevOps:
+        # You can name this provider anything unique, e.g., 'template-discovery'
+        templatesProvider:
+          host: dev.azure.com
+          organization: 'priscillabenedetti' # e.g., 'backstage'
+          project: 'demo'       # e.g., 'MyTemplatesProject'
+          # The repository to scan. Use '*' for all repos in the project.
+          repository: '*'
+          # The path pattern to find your template YAML files.
+          path: '/**/template.yaml'
+          schedule:
+            frequency: { minutes: 30 }
+            timeout: { minutes: 3 }
 
     ## Uncomment these lines to add more example data
     # - type: url

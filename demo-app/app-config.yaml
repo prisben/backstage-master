@@ -45,7 +45,7 @@ integrations:
   azure:
     - host: dev.azure.com
       credentials:
-        - personalAccessToken: '2IKlvs87WBfusy60IfO5QU0DlKqXBPs71axG63fxHfE4YnAOTEpAJQQJ99BKACAAAAAAAAAAAAASAZDO37Wp'
+        - personalAccessToken: '59WDLTnytgSdlKcA6hTHtZoR5MVAClDpvRp2pSdvmJeVhu1UXiV5JQQJ99BKACAAAAAAAAAAAAASAZDO4aHA'
 
 proxy:
   ### Example for how to add a proxy endpoint for the frontend.
@@ -72,6 +72,16 @@ auth:
     # See https://backstage.io/docs/auth/guest/provider
     guest: 
       dangerouslyAllowOutsideDevelopment: true
+    microsoft:
+      development:
+        clientId: '4a425448-386f-4d84-8a1d-02bef73d915b'
+        clientSecret: 'yBi8Q~CiKYqAw8TG.EoWssnNR.u0RTf8MmV_LdkG'
+        tenantId: 'd95e7f3f-d2d0-402f-b49b-0f85bd85defa'
+        domainHint: 'd95e7f3f-d2d0-402f-b49b-0f85bd85defa'
+        signIn:
+          resolvers:
+            # See https://backstage.io/docs/auth/microsoft/provider#resolvers for more resolvers
+            - resolver: userIdMatchingUserEntityAnnotation
 
 scaffolder:
   # see https://backstage.io/docs/features/software-templates/configuration for software template options
@@ -112,6 +122,18 @@ catalog:
           schedule:
             frequency: { minutes: 30 }
             timeout: { minutes: 3 }
+      microsoftGraphOrg:
+            default:
+              clientId: '4a425448-386f-4d84-8a1d-02bef73d915b'
+              clientSecret: 'yBi8Q~CiKYqAw8TG.EoWssnNR.u0RTf8MmV_LdkG'
+              tenantId: 'd95e7f3f-d2d0-402f-b49b-0f85bd85defa'
+              # The Schedule for how often to sync users
+              schedule:
+                frequency: { minutes: 60 }
+                timeout: { minutes: 15 }
+              # (Optional) Filter to only import active member accounts
+              user:
+                filter: accountEnabled eq true and userType eq 'member'
 
     ## Uncomment these lines to add more example data
     # - type: url

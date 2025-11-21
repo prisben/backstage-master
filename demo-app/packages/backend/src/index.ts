@@ -5,10 +5,31 @@
  *
  * Happy hacking!
  */
-
+import { myUserTransformer } from './extensions/microsoftGraphTransformer'; // <--- Import your file
+import { microsoftGraphOrgEntityProviderTransformExtensionPoint } from '@backstage/plugin-catalog-backend-module-msgraph';
+import { createBackendModule } from '@backstage/backend-plugin-api';
 import { createBackend } from '@backstage/backend-defaults';
 
 const backend = createBackend();
+
+// REGISTER THE CUSTOM TRANSFORMER
+const customMicrosoftGraphModule = createBackendModule({
+  pluginId: 'catalog',
+  moduleId: 'microsoft-graph-custom-transformer',
+  register(reg) {
+    reg.registerInit({
+      deps: {
+        microsoftGraph: microsoftGraphOrgEntityProviderTransformExtensionPoint,
+      },
+      async init({ microsoftGraph }) {
+        // Tell Backstage to use YOUR logic instead of the default
+        microsoftGraph.setUserTransformer(myUserTransformer);
+      },
+    });
+  },
+});
+
+backend.add(customMicrosoftGraphModule);
 
 backend.add(import('@backstage/plugin-app-backend'));
 backend.add(import('@backstage/plugin-proxy-backend'));
@@ -19,6 +40,7 @@ backend.add(import('@backstage/plugin-scaffolder-backend-module-github'));
 backend.add(
   import('@backstage/plugin-scaffolder-backend-module-notifications'),
 );
+backend.add(import('@parfuemerie-douglas/scaffolder-backend-module-azure-pipelines'));
 backend.add(import('@parfuemerie-douglas/scaffolder-backend-module-azure-repositories'))
 // techdocs plugin
 backend.add(import('@backstage/plugin-techdocs-backend'));
@@ -28,6 +50,8 @@ backend.add(import('@backstage/plugin-auth-backend'));
 // See https://backstage.io/docs/backend-system/building-backends/migrating#the-auth-plugin
 backend.add(import('@backstage/plugin-auth-backend-module-guest-provider'));
 // See https://backstage.io/docs/auth/guest/provider
+backend.add(import('@backstage/plugin-auth-backend-module-microsoft-provider'));
+backend.add(import('@backstage/plugin-catalog-backend-module-msgraph'));
 
 // catalog plugin
 backend.add(import('@backstage/plugin-catalog-backend'));

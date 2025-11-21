@@ -3615,7 +3615,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@backstage/catalog-model@npm:^1.4.3, @backstage/catalog-model@npm:^1.5.0, @backstage/catalog-model@npm:^1.7.3, @backstage/catalog-model@npm:^1.7.4, @backstage/catalog-model@npm:^1.7.6":
+"@backstage/catalog-model@npm:^1.4.3, @backstage/catalog-model@npm:^1.5.0, @backstage/catalog-model@npm:^1.7.0, @backstage/catalog-model@npm:^1.7.3, @backstage/catalog-model@npm:^1.7.4, @backstage/catalog-model@npm:^1.7.6":
   version: 1.7.6
   resolution: "@backstage/catalog-model@npm:1.7.6"
   dependencies:
@@ -4495,6 +4495,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@backstage/plugin-auth-backend-module-microsoft-provider@npm:^0.3.9":
+  version: 0.3.9
+  resolution: "@backstage/plugin-auth-backend-module-microsoft-provider@npm:0.3.9"
+  dependencies:
+    "@backstage/backend-plugin-api": "npm:^1.5.0"
+    "@backstage/plugin-auth-node": "npm:^0.6.9"
+    express: "npm:^4.18.2"
+    jose: "npm:^5.0.0"
+    passport-microsoft: "npm:^1.0.0"
+    zod: "npm:^3.22.4"
+  checksum: 10/6deda4d41aa3f0ab1187ff44e846b018efa08d3fadcaa2f70c52339d35822cbe4ac1e8bca79df9bb496aba759fc893aebfa84ff3d29cc6817a866401cc2ae962
+  languageName: node
+  linkType: hard
+
 "@backstage/plugin-auth-backend@npm:^0.25.5":
   version: 0.25.5
   resolution: "@backstage/plugin-auth-backend@npm:0.25.5"
@@ -4685,6 +4699,25 @@ __metadata:
     "@backstage/plugin-catalog-backend": "npm:^3.1.2"
     "@backstage/plugin-events-node": "npm:^0.4.16"
   checksum: 10/128b66b6123ec3e96e316f72be1ee0707776678a7ecdca8cced917b8c2b0d293741d8a82d68f4ef70abe0bbb096d41817fe0f3d40b533e7f89ae0f7f66461b0f
+  languageName: node
+  linkType: hard
+
+"@backstage/plugin-catalog-backend-module-msgraph@npm:^0.8.2":
+  version: 0.8.2
+  resolution: "@backstage/plugin-catalog-backend-module-msgraph@npm:0.8.2"
+  dependencies:
+    "@azure/identity": "npm:^4.0.0"
+    "@backstage/backend-plugin-api": "npm:^1.5.0"
+    "@backstage/catalog-model": "npm:^1.7.6"
+    "@backstage/config": "npm:^1.3.6"
+    "@backstage/plugin-catalog-common": "npm:^1.1.7"
+    "@backstage/plugin-catalog-node": "npm:^1.20.0"
+    "@microsoft/microsoft-graph-types": "npm:^2.6.0"
+    lodash: "npm:^4.17.21"
+    p-limit: "npm:^3.0.2"
+    qs: "npm:^6.9.4"
+    uuid: "npm:^11.0.0"
+  checksum: 10/971f084b4a89f2abca19d8ccb9ee222cea31e78b825a760850f0fe3560f82d9aead15c29e550f60d805fe5c1966bf504ce6aacfa3c7aaa3d6777000ea64619b2
   languageName: node
   linkType: hard
 
@@ -5697,7 +5730,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@backstage/plugin-scaffolder-backend@npm:^1.22.6":
+"@backstage/plugin-scaffolder-backend@npm:^1.22.6, @backstage/plugin-scaffolder-backend@npm:^1.23.0":
   version: 1.33.0
   resolution: "@backstage/plugin-scaffolder-backend@npm:1.33.0"
   dependencies:
@@ -5818,7 +5851,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@backstage/plugin-scaffolder-common@npm:^1.4.5, @backstage/plugin-scaffolder-common@npm:^1.5.11, @backstage/plugin-scaffolder-common@npm:^1.7.3":
+"@backstage/plugin-scaffolder-common@npm:^1.4.5, @backstage/plugin-scaffolder-common@npm:^1.5.11, @backstage/plugin-scaffolder-common@npm:^1.5.6, @backstage/plugin-scaffolder-common@npm:^1.7.3":
   version: 1.7.3
   resolution: "@backstage/plugin-scaffolder-common@npm:1.7.3"
   dependencies:
@@ -5931,6 +5964,31 @@ __metadata:
     zod: "npm:^3.22.4"
     zod-to-json-schema: "npm:^3.20.4"
   checksum: 10/34b869be5c89e3c5fd97f5d51232bbf16f16c56483ab9ebfa9a0d264b3a6aa08504281d74bbd64cc29f96af208dd5668701c7f17da1789afb38a4e352b3e3067
+  languageName: node
+  linkType: hard
+
+"@backstage/plugin-scaffolder-node@npm:^0.4.8":
+  version: 0.4.12
+  resolution: "@backstage/plugin-scaffolder-node@npm:0.4.12"
+  dependencies:
+    "@backstage/backend-common": "npm:^0.25.0"
+    "@backstage/backend-plugin-api": "npm:^1.0.0"
+    "@backstage/catalog-model": "npm:^1.7.0"
+    "@backstage/errors": "npm:^1.2.4"
+    "@backstage/integration": "npm:^1.15.0"
+    "@backstage/plugin-scaffolder-common": "npm:^1.5.6"
+    "@backstage/types": "npm:^1.1.1"
+    concat-stream: "npm:^2.0.0"
+    fs-extra: "npm:^11.2.0"
+    globby: "npm:^11.0.0"
+    isomorphic-git: "npm:^1.23.0"
+    jsonschema: "npm:^1.2.6"
+    p-limit: "npm:^3.1.0"
+    tar: "npm:^6.1.12"
+    winston: "npm:^3.2.1"
+    zod: "npm:^3.22.4"
+    zod-to-json-schema: "npm:^3.20.4"
+  checksum: 10/821df7bf19e45c3e6e968019af2fb6e361671d821260128f6a931221f17ced159f27210958ce8bb53e55d4f7aa1ea7123c6c96e9ae7a5589e2d0ad4735944f87
   languageName: node
   linkType: hard
 
@@ -9306,6 +9364,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@microsoft/microsoft-graph-types@npm:^2.6.0":
+  version: 2.43.1
+  resolution: "@microsoft/microsoft-graph-types@npm:2.43.1"
+  checksum: 10/d24bf4230f3eaae6d93aee217c9d54693a45431287ec83cf9031a0b7335c3c6bc0119f24ee658dfb0092db11a62db29df313b39c3315bd98418b285618b01795
+  languageName: node
+  linkType: hard
+
 "@module-federation/bridge-react-webpack-plugin@npm:0.9.1":
   version: 0.9.1
   resolution: "@module-federation/bridge-react-webpack-plugin@npm:0.9.1"
@@ -10627,6 +10692,22 @@ __metadata:
   version: 1.9.0
   resolution: "@opentelemetry/api@npm:1.9.0"
   checksum: 10/a607f0eef971893c4f2ee2a4c2069aade6ec3e84e2a1f5c2aac19f65c5d9eeea41aa72db917c1029faafdd71789a1a040bdc18f40d63690e22ccae5d7070f194
+  languageName: node
+  linkType: hard
+
+"@parfuemerie-douglas/scaffolder-backend-module-azure-pipelines@npm:^1.3.0":
+  version: 1.3.0
+  resolution: "@parfuemerie-douglas/scaffolder-backend-module-azure-pipelines@npm:1.3.0"
+  dependencies:
+    "@backstage/backend-common": "npm:^0.23.3"
+    "@backstage/backend-plugin-api": "npm:^0.7.0"
+    "@backstage/errors": "npm:^1.2.4"
+    "@backstage/integration": "npm:^1.13.0"
+    "@backstage/plugin-scaffolder-backend": "npm:^1.23.0"
+    "@backstage/plugin-scaffolder-node": "npm:^0.4.8"
+    "@backstage/types": "npm:^1.1.1"
+    node-fetch: "npm:^3.3.2"
+  checksum: 10/a17ae9f0e5501614f6e97abae4f517024ea27f5cef5b9fed8eee31f1c4fd38c2f5b2097789a5bab39d8985f32bd08d99cd421edb7dfc0b412eb3e7b40b25481d
   languageName: node
   linkType: hard
 
@@ -18423,16 +18504,19 @@ __metadata:
   resolution: "backend@workspace:packages/backend"
   dependencies:
     "@backstage/backend-defaults": "npm:^0.13.0"
+    "@backstage/backend-plugin-api": "npm:^1.5.0"
     "@backstage/cli": "npm:^0.34.4"
     "@backstage/config": "npm:^1.3.5"
     "@backstage/plugin-app-backend": "npm:^0.5.7"
     "@backstage/plugin-auth-backend": "npm:^0.25.5"
     "@backstage/plugin-auth-backend-module-github-provider": "npm:^0.3.8"
     "@backstage/plugin-auth-backend-module-guest-provider": "npm:^0.2.13"
+    "@backstage/plugin-auth-backend-module-microsoft-provider": "npm:^0.3.9"
     "@backstage/plugin-auth-node": "npm:^0.6.8"
     "@backstage/plugin-catalog-backend": "npm:^3.1.2"
     "@backstage/plugin-catalog-backend-module-azure": "npm:^0.3.11"
     "@backstage/plugin-catalog-backend-module-logs": "npm:^0.1.15"
+    "@backstage/plugin-catalog-backend-module-msgraph": "npm:^0.8.2"
     "@backstage/plugin-catalog-backend-module-scaffolder-entity-model": "npm:^0.2.13"
     "@backstage/plugin-kubernetes-backend": "npm:^0.20.3"
     "@backstage/plugin-notifications-backend": "npm:^0.5.11"
@@ -18452,6 +18536,7 @@ __metadata:
     "@backstage/plugin-search-backend-node": "npm:^1.3.16"
     "@backstage/plugin-signals-backend": "npm:^0.3.9"
     "@backstage/plugin-techdocs-backend": "npm:^2.1.1"
+    "@parfuemerie-douglas/scaffolder-backend-module-azure-pipelines": "npm:^1.3.0"
     "@parfuemerie-douglas/scaffolder-backend-module-azure-repositories": "npm:^0.3.0"
     app: "link:../app"
     better-sqlite3: "npm:^12.0.0"
@@ -22770,7 +22855,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"express@npm:^4.14.0, express@npm:^4.17.1, express@npm:^4.21.2":
+"express@npm:^4.14.0, express@npm:^4.17.1, express@npm:^4.18.2, express@npm:^4.21.2":
   version: 4.21.2
   resolution: "express@npm:4.21.2"
   dependencies:
@@ -30461,7 +30546,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"passport-oauth2@npm:1.x.x, passport-oauth2@npm:^1.7.0":
+"passport-microsoft@npm:^1.0.0":
+  version: 1.1.0
+  resolution: "passport-microsoft@npm:1.1.0"
+  dependencies:
+    passport-oauth2: "npm:1.8.0"
+  checksum: 10/4c18d4074308ca5da67b08b2b9eee97dae017e7c9e62dedb21875f25ced9fd959218977bd1c8cfd6067ce081e9764bbe2541696e09e6e1464e72c699165fc07f
+  languageName: node
+  linkType: hard
+
+"passport-oauth2@npm:1.8.0, passport-oauth2@npm:1.x.x, passport-oauth2@npm:^1.7.0":
   version: 1.8.0
   resolution: "passport-oauth2@npm:1.8.0"
   dependencies:
